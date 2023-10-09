@@ -17,7 +17,6 @@ A diagram of the architecture is provided below.
     - [Testing](#testing)
   - [Architecture](#architecture)
     - [Diagrams](#diagrams)
-    - [Configuration](#configuration)
   - [Licence](#licence)
 
 ## Setup
