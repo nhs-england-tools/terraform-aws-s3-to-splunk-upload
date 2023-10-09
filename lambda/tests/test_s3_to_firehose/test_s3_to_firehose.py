@@ -80,7 +80,7 @@ def build_test_notification(bucket_name, test_file_name):
                 "awsRegion": "us-west-2",
                 "eventTime": "1970-01-01T00:00:00.000Z",
                 "eventName": "ObjectCreated:Put",
-                "userIdentity": {"principalId": "AIDAJDPLRKLG7UEXAMPLE"},
+                "userIdentity": {"principalId": "ExampleId"},
                 "requestParameters": {"sourceIPAddress": "127.0.0.1"},
                 "responseElements": {
                     "x-amz-request-id": "C3D13FE58DE4C810",
