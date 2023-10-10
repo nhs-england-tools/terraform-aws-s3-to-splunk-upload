@@ -44,7 +44,7 @@ Example usage:
 
   ```js
   module "example_usage" {
-    source                    = "github.com/NHSDigital/terraform-aws-s3-to-splunk-upload//terraform?ref=20231002"
+    source                    = "github.com/nhs-england-tools/terraform-aws-s3-to-splunk-upload//terraform?ref=20231002"
     audit_logs_bucket_name    = "example-audit-log-bucket"
     splunk_hec_token          = "<<your hec token>>"
     splunk_hec_endpoint       = "https://<<domain>>/services/collector/event"
