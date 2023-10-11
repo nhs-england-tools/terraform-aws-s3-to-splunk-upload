@@ -70,6 +70,12 @@ jobs:
       - name: "Run test coverage check"
         run: |
           make test-coverage
+      - name: Coverage artefact
+        uses: actions/upload-artifact@v3
+        with:
+          name: code-coverage-report
+          path: ./coverage.xml
+          retention-days: 1
   perform-static-analysis:
     name: "Perform static analysis"
     needs: [test-unit, test-coverage]
@@ -83,6 +89,11 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 0 # Full history is needed to improving relevancy of reporting
+      - name: "Download coverage report"
+        uses: actions/download-artifact@v3
+        with:
+          name: code-coverage-report
+          path: .
       - name: "Perform static analysis"
         uses: ./.github/actions/perform-static-analysis
         with:
