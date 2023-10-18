@@ -1,0 +1,16 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Action": ["lambda:InvokeFunction", "lambda:GetFunctionConfiguration"],
+      "Effect": "Allow",
+      "Resource": "${transformation_lambda_arn}:*",
+      "Sid": ""
+    },
+    {
+      "Effect": "Allow",
+      "Action": ["kms:Decrypt", "kms:GenerateDataKey"],
+      "Resource": "${audit_logs_splashback_kms}"
+    }
+  ]
+}

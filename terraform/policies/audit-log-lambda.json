@@ -1,0 +1,26 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Action": ["s3:GetObject", "s3:PutObject"],
+      "Effect": "Allow",
+      "Resource": [
+        "${audit_logs_bucket_arn}",
+        "${audit_logs_bucket_arn}/*",
+        "${audit_logs_splashback_bucket_arn}",
+        "${audit_logs_splashback_bucket_arn}/*"
+      ],
+      "Sid": ""
+    },
+    {
+      "Action": ["kms:Decrypt"],
+      "Effect": "Allow",
+      "Resource": ["${audit_logs_splashback_kms}", "${audit_logs_bucket_kms}"]
+    },
+    {
+      "Action": ["firehose:PutRecord"],
+      "Effect": "Allow",
+      "Resource": "${audit_logs_firehose_arn}"
+    }
+  ]
+}

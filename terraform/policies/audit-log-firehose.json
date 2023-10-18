@@ -1,0 +1,42 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "",
+      "Action": [
+        "s3:AbortMultipartUpload",
+        "s3:GetBucketLocation",
+        "s3:GetObject",
+        "s3:ListBucket",
+        "s3:ListBucketMultipartUploads",
+        "s3:PutObject"
+      ],
+      "Effect": "Allow",
+      "Resource": [
+        "${audit_logs_splashback_arn}",
+        "${audit_logs_splashback_arn}/*"
+      ]
+    },
+    {
+      "Sid": "",
+      "Action": ["kms:Decrypt", "kms:GenerateDataKey"],
+      "Effect": "Allow",
+      "Resource": "${audit_logs_splashback_kms_arn}"
+    },
+    {
+      "Sid": "",
+      "Action": "logs:PutLogEvents",
+      "Effect": "Allow",
+      "Resource": [
+        "${audit_logs_firehose_log_group_arn}",
+        "${audit_logs_firehose_log_stream_arn}"
+      ]
+    },
+    {
+      "Sid": "",
+      "Effect": "Allow",
+      "Action": ["lambda:InvokeFunction", "lambda:GetFunctionConfiguration"],
+      "Resource": "${audit_logs_transformation_lambda_arn}:*"
+    }
+  ]
+}

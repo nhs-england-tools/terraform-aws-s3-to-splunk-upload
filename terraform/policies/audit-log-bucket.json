@@ -1,0 +1,39 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": ["s3:PutObject", "s3:ListBucket"],
+      "Principal": {
+        "AWS": "arn:aws:iam::${account_id}:role/NHSDAdminRole"
+      },
+      "Resource": ["${aws_s3_bucket_arn}", "${aws_s3_bucket_arn}/*"]
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "s3:AbortMultipartUpload",
+        "s3:GetBucketLocation",
+        "s3:GetObject",
+        "s3:ListBucket",
+        "s3:ListBucketMultipartUploads",
+        "s3:PutObject"
+      ],
+      "Principal": {
+        "AWS": "${audit_logs_firehose_role_arn}"
+      },
+      "Resource": ["${aws_s3_bucket_arn}", "${aws_s3_bucket_arn}/*"]
+    },
+    {
+      "Action": "s3:*",
+      "Effect": "Deny",
+      "Principal": "*",
+      "Resource": "${aws_s3_bucket_arn}/*",
+      "Condition": {
+        "Bool": {
+          "aws:SecureTransport": "false"
+        }
+      }
+    }
+  ]
+}
