@@ -15,7 +15,7 @@ coverage = "^7.2.2"
 pytest-cov = "^4.0.0"
 boto3 = "^1.26.99"
 black = "^23.1.0"
-pytest-mock = "^3.11.1"
+pytest-mock = "^3.12.0"
 botocore = "^1.29.159"
 moto = {extras = ["firehose", "s3"], version = "^4.1.12"}
 
