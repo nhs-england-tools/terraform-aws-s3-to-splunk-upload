@@ -60,7 +60,7 @@ jobs:
           export release_name=terraform-aws-s3-to-splunk-upload-${{ needs.metadata.outputs.version }}.tar.gz
           tar -czf $release_name ./lambda ./terraform
       - name: "Create release"
-        uses: softprops/action-gh-release@v1
+        uses: softprops/action-gh-release@v2
         with:
           files: terraform-aws-s3-to-splunk-upload-${{ needs.metadata.outputs.version }}.tar.gz
           name: Release ${{ needs.metadata.outputs.version }}
