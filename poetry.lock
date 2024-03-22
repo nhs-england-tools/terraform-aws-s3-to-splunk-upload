@@ -44,17 +44,17 @@ uvloop = ["uvloop (>=0.15.2)"]
 
 [[package]]
 name = "boto3"
-version = "1.34.31"
+version = "1.34.68"
 description = "The AWS SDK for Python"
 optional = false
-python-versions = ">= 3.8"
+python-versions = ">=3.8"
 files = [
-    {file = "boto3-1.34.31-py3-none-any.whl", hash = "sha256:0d800130e43a5d4e71300cc6f91aabcef6fe6f26bc206bc61374bf695049587a"},
-    {file = "boto3-1.34.31.tar.gz", hash = "sha256:c4dec7ea9bc9210ec783d39b56d332f5a266b0d1e31a96c5092f6bd5252361ba"},
+    {file = "boto3-1.34.68-py3-none-any.whl", hash = "sha256:14f1e23b3f83ec365628a6ef849f1038b4c7338c4fabff159007c711b8147efc"},
+    {file = "boto3-1.34.68.tar.gz", hash = "sha256:00a7cff4887e8a46c8b2ce438f33d5f87cf7812f303227adc0266f28338af6d5"},
 ]
 
 [package.dependencies]
-botocore = ">=1.34.31,<1.35.0"
+botocore = ">=1.34.68,<1.35.0"
 jmespath = ">=0.7.1,<2.0.0"
 s3transfer = ">=0.10.0,<0.11.0"
 
@@ -63,13 +63,13 @@ crt = ["botocore[crt] (>=1.21.0,<2.0a0)"]
 
 [[package]]
 name = "botocore"
-version = "1.34.47"
+version = "1.34.68"
 description = "Low-level, data-driven core of boto 3."
 optional = false
-python-versions = ">= 3.8"
+python-versions = ">=3.8"
 files = [
-    {file = "botocore-1.34.47-py3-none-any.whl", hash = "sha256:8f0c989d12cfceb06b005808492ec1ff6ae90fab1fc4bf7ac8e825ac86bc8a0b"},
-    {file = "botocore-1.34.47.tar.gz", hash = "sha256:29f1d6659602c5d79749eca7430857f7a48dd02e597d0ea4a95a83c47847993e"},
+    {file = "botocore-1.34.68-py3-none-any.whl", hash = "sha256:3ad0ec67f78beecc039c3c31c93a83181e30b6f789261bdbb9f5c8e8dc551812"},
+    {file = "botocore-1.34.68.tar.gz", hash = "sha256:e7ae9d69cc3e7b31d926e6a1a9ae673ba02da263e35cf12ff2bae35a21755cc6"},
 ]
 
 [package.dependencies]
@@ -77,7 +77,7 @@ jmespath = ">=0.7.1,<2.0.0"
 python-dateutil = ">=2.1,<3.0.0"
 urllib3 = [
     {version = ">=1.25.4,<1.27", markers = "python_version < \"3.10\""},
-    {version = ">=1.25.4,<2.1", markers = "python_version >= \"3.10\""},
+    {version = ">=1.25.4,<2.2.0 || >2.2.0,<3", markers = "python_version >= \"3.10\""},
 ]
 
 [package.extras]
@@ -960,4 +960,4 @@ files = [
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.9"
-content-hash = "3d418a7dc4471571a483f59287607278122d3c652800592252f278898478ae7d"
+content-hash = "0078db7793bdb7f5a46364a8a49042287666600cd09c6537409727d8636552cf"
