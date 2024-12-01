@@ -71,7 +71,7 @@ jobs:
         run: |
           make test-coverage
       - name: Coverage artefact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: code-coverage-report
           path: ./coverage.xml
