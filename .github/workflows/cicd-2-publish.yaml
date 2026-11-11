@@ -22,7 +22,7 @@ jobs:
       version: ${{ steps.variables.outputs.version }}
     steps:
       - name: "Checkout code"
-        uses: actions/checkout@v4
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 #v7.0.1
       - name: "Set CI/CD variables"
         id: variables
         run: |
@@ -53,14 +53,14 @@ jobs:
     timeout-minutes: 3
     steps:
       - name: "Checkout code"
-        uses: actions/checkout@v4
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 #v7.0.1
       - name: "Get the artefacts"
         run: |
           echo "Building artefact ..."
           export release_name=terraform-aws-s3-to-splunk-upload-${{ needs.metadata.outputs.version }}.tar.gz
           tar -czf $release_name ./lambda ./terraform
       - name: "Create release"
-        uses: softprops/action-gh-release@v1
+        uses: softprops/action-gh-release@28ab305d0ffa26d60ec4bd614126329e26c7a0ec #v3.0.4
         with:
           files: terraform-aws-s3-to-splunk-upload-${{ needs.metadata.outputs.version }}.tar.gz
           name: Release ${{ needs.metadata.outputs.version }}
@@ -76,7 +76,7 @@ jobs:
         run: echo "secret_exist=${{ secrets.TEAMS_NOTIFICATION_WEBHOOK_URL != '' }}" >> $GITHUB_OUTPUT
       - name: "Notify on publishing packages"
         if: steps.check.outputs.secret_exist == 'true'
-        uses: nhs-england-tools/notify-msteams-action@v0.0.4
+        uses: nhs-england-tools/notify-msteams-action@02b92a76ea509f2d303d59b9c9e2bb30a224e5af #v1.1.0
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           teams-webhook-url: ${{ secrets.TEAMS_NOTIFICATION_WEBHOOK_URL }}
