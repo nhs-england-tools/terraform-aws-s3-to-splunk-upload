@@ -14,7 +14,7 @@ set -e
 # ==============================================================================
 
 # SEE: https://github.com/anchore/grype/pkgs/container/grype, use the `linux/amd64` os/arch
-image_version=v0.64.2@sha256:f24e2282b5ff43a2a4df2280e9afcdac5a645df860b03db269049cbfb2cc25b4
+image_version=v0.121.3@sha256:fc0e577410baa1ff4956f0927b05c9be6a0459c71517e23c14e44bcd9e19553f
 
 # ==============================================================================
 

@@ -17,18 +17,18 @@ config:: # Configure development environment (main) @Configuration
 		terraform-install
 
 install-poetry:
-	curl -sSL https://install.python-poetry.org | python3.9 -
+	curl -sSL https://install.python-poetry.org | python3.14 -
 	echo 'export PATH="$$HOME/.local/bin:$$PATH"' >> ~/.bashrc
 	source ~/.bashrc
 
 setup:
 	sudo add-apt-repository ppa:deadsnakes/ppa
-	sudo apt install python3.9
-	sudo apt install python3.9-venv python3-venv
+	sudo apt install python3.14
+	sudo apt install python3.14-venv python3-venv
 
 install-root-project:
 	${MAKE} install-poetry
-	python3.9 -m venv .venv
+	python3.14 -m venv .venv
 	source .venv/bin/activate
 	poetry install --no-root --with dev
 
